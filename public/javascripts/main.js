@@ -33,7 +33,13 @@ SearchResult.prototype.render = function(){
 		"class" : "product-image"
 	});
 
-	resultElem.append(document.createTextNode(this.data.name));
+	var linkElem = $("<a/>",{
+		href : "https://www.birchbox.com/shop/" + this.data.url_path
+	});
+
+	linkElem.append(document.createTextNode(this.data.name));
+
+	resultElem.append(linkElem);
 
 	resultElem.append(imageElem);
 
